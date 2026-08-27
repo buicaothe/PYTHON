@@ -69,7 +69,6 @@ random.choice((1,3,4))
 random.choice([1,3,4])
 random.random()
 '''
-import random
 
 # 1. Nhập và kiểm tra xác suất đầu vào
 p_input = input("Nhập xác suất khách vào cửa hàng (0.0 - 1.0): ")
@@ -77,7 +76,7 @@ p = float(p_input)
 
 if p < 0.0 or p > 1.0:
     print("Xác suất không hợp lệ. Chương trình kết thúc.")
-    exit() # Thoát chương trình ngay lập tức
+    exit()  # Thoát chương trình ngay lập tức
 
 # 2. Khởi tạo các biến theo dõi
 total_customers = 0
@@ -88,14 +87,14 @@ service_time_left = 0   # Thời gian còn lại để phục vụ khách hiện
 
 # 3. Chạy vòng lặp mô phỏng 100 lần (100 phút)
 for round_num in range(1, 101):
-    
+
     # --- KIỂM TRA KHÁCH VÀO ---
     # Lấy một số ngẫu nhiên từ 0.0 đến 1.0
-    r = random.random() 
+    r = random.random()
     if r <= p:
         queue_length = queue_length + 1
         total_customers = total_customers + 1
-        
+
     # Cập nhật hàng đợi dài nhất nếu cần
     if queue_length > longest_queue:
         longest_queue = queue_length
@@ -106,7 +105,7 @@ for round_num in range(1, 101):
         if queue_length > 0:
             # Lấy 1 người từ hàng đợi ra để bắt đầu phục vụ
             queue_length = queue_length - 1
-            
+
             # Chọn ngẫu nhiên loại hàng: A(1p), B(3p), C(4p)
             loai_hang = random.randint(1, 3)
             if loai_hang == 1:
@@ -115,7 +114,7 @@ for round_num in range(1, 101):
                 service_time_left = 3
             else:
                 service_time_left = 4
-            
+
             # Vì việc phục vụ bắt đầu ngay phút này, ta trừ đi 1 phút luôn
             service_time_left = service_time_left - 1
         else:
@@ -124,6 +123,8 @@ for round_num in range(1, 101):
     else:
         # Nếu đang bận phục vụ, giảm thời gian cần làm xuống
         service_time_left = service_time_left - 1
+
+# this is the new change
 
 # 4. Xuất báo cáo kết quả
 print("---------------------------------------")
