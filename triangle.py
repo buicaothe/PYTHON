@@ -1,0 +1,15 @@
+print('CHƯƠNG TRÌNH PHÂN TÍCH TAM GIÁC')
+a = float(input('Nhập cạnh a: '))
+b = float(input('Nhập cạnh b: '))
+c = float(input('Nhập cạnh c: '))
+tamgiacvuong = ((a**2+b**2==c**2) or (a**2+c**2==b**2) or (b**2+c**2==a**2))
+tamgiaccan = ((a == b and c != a) or (a == c and b != a) or (b == c and a != b))
+tamgiacdeu = (a == b == c)
+if a + b <= c or a + c <= b or c + b <= a: print('Đây không phải là Tam giác!')
+else:
+    if tamgiacdeu == True: print('Đây là tam giác đều!')
+    else:
+        if tamgiacvuong == True and tamgiaccan == True: print('Đây là Tam giác VUÔNG CÂN!')
+        elif tamgiacvuong == True and tamgiaccan == False: print('Đây là Tam giác VUÔNG!')
+        elif tamgiacvuong == False and tamgiaccan == True: print('Đây là Tam giác CÂN!')
+        else: print('Đây là Tam giác THƯỜNG!')
