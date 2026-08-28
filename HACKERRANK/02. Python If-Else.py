@@ -1,15 +1,19 @@
 # 2. PYTHON IF-ELSE:
-While True:
-    n = int(input('Enter the number n (1 <= n <= 100):').strip())
-    if 1 <= n <= 100:
-        break
-    esle:
+while True:
+    try:
+        n = int(input('Enter an integer number from 1 to 100, n = ').strip())
+        if 1 <= n <= 100:
+            break
+        else:
+            print('The number should be from 1 to 100! Please re-type:')
+    except ValueError:
+        print('Not a NUMBER!!!!!')
 
 if n % 2 != 0:
     print('Weird')
-elif (n >= 2 and n <= 5):
+elif 2 <= n <= 5:
     print('Not Weird')
-elif n >= 6 and n <= 20:
+elif 6 >= n <= 20:
     print('Weird')
 else:
     print('Not Weird')
