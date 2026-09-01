@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net">
   <diagram name="Page-1" id="nCctJwEcPUwsEZ86mfl9">
-    <mxGraphModel dx="828" dy="495" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="544" dy="472" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -10,34 +10,52 @@
         <mxCell id="2PM7W_Qj4BVj3DRtcGsv-1" parent="1" style="ellipse;whiteSpace=wrap;html=1;shapeInside=1;" value="START" vertex="1">
           <mxGeometry height="32" width="80" x="329" y="67" as="geometry" />
         </mxCell>
-        <mxCell id="auisXyUxjFPYm87pWBFU-2" edge="1" parent="1" source="2PM7W_Qj4BVj3DRtcGsv-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="ekH9HTD9nUTrnQuExTq3-1" value="">
+        <mxCell id="iwUjPbL0LGNHtgJgMrzm-3" edge="1" parent="1" source="2PM7W_Qj4BVj3DRtcGsv-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="iwUjPbL0LGNHtgJgMrzm-1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="2PM7W_Qj4BVj3DRtcGsv-2" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="Input side a" vertex="1">
-          <mxGeometry height="40" width="136" x="301" y="116" as="geometry" />
+        <mxCell id="2PM7W_Qj4BVj3DRtcGsv-2" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="Input side a (m)" vertex="1">
+          <mxGeometry height="29" width="136" x="301" y="116" as="geometry" />
         </mxCell>
         <mxCell id="2PM7W_Qj4BVj3DRtcGsv-9" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;innerLoopWaypoints=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="369" y="161" as="sourcePoint" />
-            <mxPoint x="369" y="161" as="targetPoint" />
+            <mxPoint x="369" y="294" as="sourcePoint" />
+            <mxPoint x="369" y="294" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="ekH9HTD9nUTrnQuExTq3-6" edge="1" parent="1" source="2PM7W_Qj4BVj3DRtcGsv-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="369.0344827586207" y="267.0000000000001" as="targetPoint" />
+            <mxPoint x="369.0344827586207" y="400.0000000000001" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="2PM7W_Qj4BVj3DRtcGsv-10" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Show Area result" vertex="1">
-          <mxGeometry height="35" width="136" x="301" y="220" as="geometry" />
+        <mxCell id="2PM7W_Qj4BVj3DRtcGsv-10" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Show Total Cost result" vertex="1">
+          <mxGeometry height="35" width="136" x="301" y="346" as="geometry" />
         </mxCell>
         <mxCell id="2PM7W_Qj4BVj3DRtcGsv-12" parent="1" style="ellipse;whiteSpace=wrap;html=1;shapeInside=1;" value="END" vertex="1">
-          <mxGeometry height="32" width="80" x="329" y="267" as="geometry" />
+          <mxGeometry height="32" width="80" x="329" y="400" as="geometry" />
         </mxCell>
         <mxCell id="ekH9HTD9nUTrnQuExTq3-5" edge="1" parent="1" source="ekH9HTD9nUTrnQuExTq3-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="2PM7W_Qj4BVj3DRtcGsv-10">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="ekH9HTD9nUTrnQuExTq3-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Calculate Area&lt;br&gt;&lt;div&gt;= a*a&lt;/div&gt;" vertex="1">
-          <mxGeometry height="35" width="136" x="301" y="173" as="geometry" />
+        <mxCell id="ekH9HTD9nUTrnQuExTq3-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Calculate Total Cost:&lt;div&gt;= L x Rate&lt;/div&gt;" vertex="1">
+          <mxGeometry height="35" width="136" x="301" y="295" as="geometry" />
+        </mxCell>
+        <mxCell id="iwUjPbL0LGNHtgJgMrzm-10" edge="1" parent="1" source="iwUjPbL0LGNHtgJgMrzm-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="iwUjPbL0LGNHtgJgMrzm-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="iwUjPbL0LGNHtgJgMrzm-1" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="Input side b (m)" vertex="1">
+          <mxGeometry height="29" width="136" x="301" y="158" as="geometry" />
+        </mxCell>
+        <mxCell id="iwUjPbL0LGNHtgJgMrzm-8" edge="1" parent="1" source="iwUjPbL0LGNHtgJgMrzm-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="iwUjPbL0LGNHtgJgMrzm-5" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="iwUjPbL0LGNHtgJgMrzm-4" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;shapeInside=1;fixedSize=1;" value="Input Cost Rate" vertex="1">
+          <mxGeometry height="29" width="136" x="301" y="203" as="geometry" />
+        </mxCell>
+        <mxCell id="iwUjPbL0LGNHtgJgMrzm-7" edge="1" parent="1" source="iwUjPbL0LGNHtgJgMrzm-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="ekH9HTD9nUTrnQuExTq3-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="iwUjPbL0LGNHtgJgMrzm-5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Calculate total length&lt;br&gt;&lt;div&gt;L = 2(a+b)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="35" width="136" x="301" y="248" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
