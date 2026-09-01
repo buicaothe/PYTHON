@@ -2,8 +2,8 @@
 
 while True:
     try:
-        b = int(input('Enter the base of the Parallelogram, b = '))
-        h = int(input('Enter the height of the Parallelogram, h = '))
+        b = float(input('Enter the base of the Parallelogram, b = '))
+        h = float(input('Enter the height of the Parallelogram, h = '))
         if b*h > 0:
             break
         else:
