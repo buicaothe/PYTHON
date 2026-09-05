@@ -11,46 +11,53 @@ import networkx as nx
 import hashlib
 import cryptography
 # %matplotlib inline
+# ===============================================================
+# ********************* NUMBER SEQUENCE *************************
+# Dòng 1: Nạp NumPy để làm việc với mảng số học và các hàm lượng giác véc-tơ hóa
+import numpy as np
+
+# Dòng 2: Nạp hàm minimize từ thư viện con optimize của SciPy để tìm điểm cực tiểu
+from scipy.optimize import minimize
+
+# Dòng 3: Nạp mô-đun pyplot từ Matplotlib để trực quan hóa đồ thị hàm số
+import matplotlib.pyplot as plt
+
+# Dòng 4: Khai báo hàm mục tiêu cần tối ưu f(x) = x^2 + 10*sin(x)
 
 
-n = sy.symbols('n', integer=True, positive=True)
+def ham_muc_tieu(x):
+    # Dòng 5: Trả về giá trị của hàm số tại điểm x
+    return x**2 + 10 * np.sin(x)
 
-# Khai báo biểu thức
-an = (1 + 1/n)**n
 
-# Tính giới hạn khi n tiến đến vô cùng (sy.oo là ký hiệu vô hạn)
-limit_val = sy.limit(an, n, sy.oo)
+# Dòng 6: Thiết lập điểm đoán ban đầu (initial guess) cho thuật toán là x = 2.0
+diem_khoi_tao = -500.0
 
-print("Giới hạn của dãy:", limit_val)  # Kết quả: E
+# Dòng 7: Gọi thuật toán SciPy để tìm tọa độ x làm hàm mục tiêu đạt giá trị nhỏ nhất
+ket_qua = minimize(ham_muc_tieu, diem_khoi_tao)
 
-# Dòng 1: Nạp thư viện pandas và đặt bí danh là pd để thao tác với bảng dữ liệu
+# Dòng 8: Lấy nghiệm x tối ưu tìm được từ kết quả trả về của SciPy (kết quả lưu ở trường .x)
+x_min = ket_qua.x[0]
 
-# Dòng 2: Nạp mô-đun pyplot từ thư viện matplotlib để vẽ biểu đồ
+# Dòng 9: In tọa độ nghiệm cực tiểu ra màn hình với 4 chữ số thập phân
+print(
+    f"Điểm cực tiểu tại x = {x_min:.4f}, giá trị f(x) = {ham_muc_tieu(x_min):.4f}")
 
-# Dòng 3: Tạo một từ điển (dictionary) chứa dữ liệu thô với 2 cột: 'Ten' và 'Diem'
-raw_data = {"Ten": ["An", "Bình", "Cường", "Dung"],
-            "Diem": [8.5, 7.0, 9.2, 6.8]}
+# Dòng 10: Tạo mảng 500 điểm liên tục từ -10 đến 10 để vẽ đường cong đồ thị mượt mà
+x_ve = np.linspace(-10, 10, 10)
 
-# Dòng 4: Chuyển đổi từ điển raw_data thành DataFrame (cấu trúc bảng 2 chiều của pandas)
-df = pd.DataFrame(raw_data)
+# Dòng 11: Khởi tạo khung vẽ đồ thị có kích thước 7x4 inch
+plt.figure(figsize=(7, 4))
 
-# Dòng 5: Lọc các hàng có 'Diem' >= 8.0 và tính điểm trung bình (.mean()) của cột 'Diem' đó
-diem_tb_gioi = df[df["Diem"] >= 8.0]["Diem"].mean()
+# Dòng 12: Vẽ đường cong của hàm số theo tọa độ (x_ve, ham_muc_tieu(x_ve))
+plt.plot(x_ve, ham_muc_tieu(x_ve), label='f(x) = x^2 + 10*sin(x)', color='blue')
 
-# Dòng 6: In kết quả ra màn hình bằng f-string (định dạng số thực với 2 chữ số thập phân: .2f)
-print(f"Điểm trung bình nhóm giỏi: {diem_tb_gioi:.2f}")
+# Dòng 13: Đánh dấu điểm cực tiểu vừa tìm được bằng một dấu chấm tròn đỏ nổi bật
+plt.scatter(x_min, ham_muc_tieu(x_min), color='red',
+            s=60, zorder=5, label='Điểm cực tiểu (SciPy)')
 
-# Dòng 7: Khởi tạo một hình vẽ (figure) với kích thước chiều ngang 6 inch, chiều dọc 4 inch
-plt.figure(figsize=(6, 4))
+# Dòng 14: Hiển thị hộp chú thích (legend) để phân biệt các thành phần trên hình
+plt.legend()
 
-# Dòng 8: Vẽ biểu đồ cột với trục X là tên học sinh, trục Y là điểm số
-plt.bar(df["Ten"], df["Diem"], color="skyblue")
-
-# Dòng 9: Đặt nhãn tiêu đề cho trục tung (trục Y)
-plt.ylabel("Điểm số")
-
-# Dòng 10: Đặt tên tiêu đề chính cho biểu đồ
-plt.title("Biểu đồ điểm số học sinh")
-
-# Dòng 11: Yêu cầu Kernel kết xuất và hiển thị đồ thị ra ô kết quả (output cell)
+# Dòng 15: Xuất hình vẽ ra màn hình
 plt.show()
