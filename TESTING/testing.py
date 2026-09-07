@@ -1,21 +1,17 @@
-import math
-import numpy as np
-import scipy as sp
-import sympy as sy
-import pandas as pd
 import matplotlib.pyplot as plt
-import networkx as nx
-import hashlib
-import cryptography
-# %matplotlib inline
+import pandas as pd
+import seaborn as sns
 
-n = sy.symbols('n')  # changing the variable n to be a real variable
-a_n = 4**n
+# Tạo một bảng dữ liệu mẫu bằng Pandas
+df = pd.DataFrame(
+    {"KinhNghiem": [1, 3, 5, 7, 10], "Luong": [10, 20, 35, 50, 80]}
+)
 
-# Solving equations
-# creating a sympy-equation "a_n = 15740" with Eq-function
-equation = sy.Eq(a_n, 15740)
-# solving the equation "a_n = 15740" with respect to n
-index = sy.solve(equation, n)
-# the equation had no solutions, since n would not be an integer, so the list is empty
-print('- The index of the member 15740 is ', index)
+# Thiết lập giao diện trực quan của seaborn
+sns.set_theme(style="whitegrid")
+
+# Vẽ biểu đồ phân tán kết hợp đường hồi quy tuyến tính
+sns.regplot(x="KinhNghiem", y="Luong", data=df, color="blue")
+
+plt.title("Mối quan hệ giữa kinh nghiệm và mức lương")
+plt.show()
