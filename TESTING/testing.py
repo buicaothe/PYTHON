@@ -1,17 +1,16 @@
-import matplotlib.pyplot as plt
-import pandas as pd
-import seaborn as sns
+# Python program to insert a given element at the beginning
+# of an array
 
-# Tạo một bảng dữ liệu mẫu bằng Pandas
-df = pd.DataFrame(
-    {"KinhNghiem": [1, 3, 5, 7, 10], "Luong": [10, 20, 35, 50, 80]}
-)
+arr = [10, 20, 30, 40]
+element = 5000
+print("Array before insertion")
+for i in range(len(arr)):
+    print(arr[i], end=" ")
 
-# Thiết lập giao diện trực quan của seaborn
-sns.set_theme(style="whitegrid")
+# Insert element at the beginning
+arr.insert(3, element)
 
-# Vẽ biểu đồ phân tán kết hợp đường hồi quy tuyến tính
-sns.regplot(x="KinhNghiem", y="Luong", data=df, color="blue")
-
-plt.title("Mối quan hệ giữa kinh nghiệm và mức lương")
-plt.show()
+print("\nArray after insertion")
+print(len(arr))
+for i in range(len(arr)):
+    print(arr[i], end=" ")
