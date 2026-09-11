@@ -75,3 +75,48 @@ plt.show()
 # -----------------------------------------------------------------------------------
 # b) GEOMETRIC SUM:------------------------------------------------------------
 # -----------------------------------------------------------------------------------
+# Choose a_1 and q to be some numbers between 2-9. [a_1 = 3, q = 2]
+# Create and print the expression of the symbolic sum of the first n members.
+n = sy.symbols('n', positive=True)
+a_n = 3*2**(n-1)
+print('- Print the Expression of Symbolic Sum a_n = ', a_n)
+
+# Calculating sum
+# calculating sum S_10 with sympy summation-function
+sum10 = sy.summation(a_n, (n, 1, 10))
+print('- Sum of a_n using Summation = ', sum10)
+# calculating sum S_10 with the geometric sum formula
+sum10 = a_n.subs(n, 1)*(1-2**10)/(1-2)
+print('- Sum of a_n using geometric sum formula = ', sum10)
+f_n = sy.lambdify(n, a_n, "numpy")  # lambdifying the general term a_n into f_n
+list10 = np.arange(1, 11)
+members1_10 = f_n(list10)
+# calculating sum S_10 with numpy sum-function for sequence a_n
+sum10 = np.sum(members1_10)
+print('- Sum of a_n using numpy sum-function = ', sum10)
+
+# Calculating the symbolic sum of n members
+# creating the general sum S_n with sympy summation-function
+sum_n = sy.summation(a_n, (n, 1, n))
+print('- General sum S_n with sympy summation-function = ', sum_n)
+# creating the general sum S_n with the geometric sum formula
+sum_n = a_n.subs(n, 1)*(1-2**n)/(1-2)
+print('- General sum S_n with geometric sum formula = ', sum_n)
+
+# Solve the index variable n, when the sum equals S_n=10^6
+equation = sy.Eq(sum_n, 1000000)
+# solving the index variable n, when sum equals S_n=10^6
+index = sy.solve(equation, n)
+print('- The index of the a_n when Sum = 10^6, n = ', index[0].evalf())
+# verifying the result
+print(
+    f'- Check the Sum when n = {index[0].evalf()}, S_n = ', sum_n.subs(n, index[0]))
+
+
+# Print the index variable n as a floating point number.
+# Plotting sum S_10 as a 1-width histogram
+plt.bar(list10, members1_10, width=1.0, edgecolor='black')
+plt.title("Geometric Sum S_10")
+plt.xlabel("n")
+plt.ylabel("a_n")
+plt.show()
