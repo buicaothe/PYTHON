@@ -1,16 +1,26 @@
-# Python program to insert a given element at the beginning
-# of an array
+def func(n):
+    if n <= 0:
+        return 1
+    return n*func(n-1)
 
-arr = [10, 20, 30, 40]
-element = 5000
-print("Array before insertion")
-for i in range(len(arr)):
-    print(arr[i], end=" ")
 
-# Insert element at the beginning
-arr.insert(3, element)
+n = 5
+print(func(5))
 
-print("\nArray after insertion")
-print(len(arr))
-for i in range(len(arr)):
-    print(arr[i], end=" ")
+
+f = 1
+i = 2
+n = 5
+# Calculating factorial of number
+while (i <= n):
+    f = i*f
+    i = i+1
+print(f)
+
+f = 1
+n = 5
+# Calculating factorial of number
+for i in range(1, n+1):
+    f = i*f
+    i = i+1
+print(f)
