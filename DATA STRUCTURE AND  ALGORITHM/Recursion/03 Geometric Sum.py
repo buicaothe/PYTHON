@@ -1,28 +1,35 @@
-def sum1(n):
-    if n <= 1:
-        return 1
-    return sum1(n/4)+n
+# GEOMETRIC SUM
 
-
-print('- Geometric Sum = ', sum1(16))
-
-
-n = int(input('- Enter Number of members for Arithmetic Sum: n = '))
-a1 = int(input('- Enter first member for Arithmetic Sum: a1 = '))
-d = int(input('- Enter common diffrence of the Sequence, d = '))
-an = a1+d*(n-1)
-print('- The Final member of the Arithmetic Sequence, an = ', an)
+n = int(input('- Enter Number of members for Geometric Sum: n = '))
+a1 = int(input('- Enter first member for Geometric Sum: a1 = '))
+q = int(input('- Enter common ratio of the Sequence, q = '))
+an = a1*q**(n-1)
+print('- The Final member of the Geometric Sequence, an = ', an)
 
 sequence = []
 for i in range(1, n+1):
-    sequence.append(a1+d*(i-1))
-print('- The Arithmetic Sequence an = ', sequence)
+    sequence.append(a1*q**(i-1))
+print('- The Geometric Sequence an = ', sequence)
+
+# ITERATIVE ALGOITHM:
 
 
-def sum2(an):
-    if an <= a1:
+def geometric_sum1():
+    total = 0
+    for i in sequence:
+        total += i
+    return total
+
+
+print('- Geometric Sum by ITERATIVE ALGORITHM = ', geometric_sum1())
+
+# RECURSIVE ALGOITHM:
+
+
+def geometric_sum2(n):
+    if n <= 1:
         return a1
-    return sum2(an-d)+an
+    return geometric_sum2(n - 1) + sequence[n - 1]
 
 
-print('- Arithmetic Sum = ', sum2(an))
+print('- Geometric Sum by RECURSIVE ALGORITHM = ', geometric_sum2(n))
