@@ -1,25 +1,11 @@
-def func(n):
-    if n <= 0:
-        return 1
-    return n*func(n-1)
 
+s1 = "hello"
 
-n = 5
-print(func(5))
+s2 = "world"
 
+s1 = "hello"
 
-f = 1
-i = 2
-n = 5
-# Calculating factorial of number
-while (i <= n):
-    f = i*f
-    i = i+1
-print(f)
+s2 = s1
 
-f = 1
-n = 5
-# Calculating factorial of number
-for i in range(1, n+1):
-    f = i*f
-print(f)
+print(s1)
+print(s2)
