@@ -1,3 +1,4 @@
 # Google Drive temporary files
 .tmp.drivedownload*
 .tmp.driveupload*
+*.csv
