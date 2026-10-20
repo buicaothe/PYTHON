@@ -1,0 +1,20 @@
+{
+  "project": "Implementation of Essential Data Structures & Algorithms in Python",
+  "group": "DSA Project Group",
+  "team": [
+    {
+      "full_name": "Al-Qaraghuly Mostafa",
+      "role": "Software Engineer"
+    },
+    {
+      "full_name": "Khiem Nguyen",
+      "role": "Software Engineer"
+    },
+    {
+      "full_name": "The Bui",
+      "role": "Software Engineer"
+    }
+  ],
+  "language": "python",
+  "python_min_version": "3.9"
+}
