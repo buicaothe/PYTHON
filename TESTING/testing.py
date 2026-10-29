@@ -1,7 +1,8 @@
-list_of_items = ['bui','cao','the','this','is','my','name']
+x=10
+y=x
+x=20
+y=x
+print(x)
+print(y)
 
-for i in list_of_items:
-    print(i) # in lấn lượt các phần tử có trong list
-
-for i in range(len(list_of_items)):
-    print(i) # in thứ tự số nguyên từ 0 đến chiều dài của list.
+# assa 
