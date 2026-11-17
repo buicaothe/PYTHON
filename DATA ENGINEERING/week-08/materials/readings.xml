@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Two stations, two days each. The queries in xmlstarlet.md use this file. -->
+<catalog xmlns="https://example.edu/deai/readings" xmlns:geo="https://example.edu/deai/geo" updated="2026-11-12">
+  <station id="turku">
+    <name>Turku</name>
+    <geo:point lat="60.45" lon="22.27"/>
+    <reading date="2026-11-01">
+      <temperature unit="C">4.2</temperature>
+      <rainfall unit="mm">1.1</rainfall>
+    </reading>
+    <reading date="2026-11-02">
+      <temperature unit="C">3.5</temperature>
+      <rainfall unit="mm">0.0</rainfall>
+    </reading>
+  </station>
+  <station id="helsinki">
+    <name>Helsinki</name>
+    <geo:point lat="60.17" lon="24.94"/>
+    <reading date="2026-11-01">
+      <temperature unit="C">2.8</temperature>
+      <rainfall unit="mm">3.4</rainfall>
+    </reading>
+    <reading date="2026-11-02">
+      <temperature unit="C">1.9</temperature>
+      <rainfall unit="mm">0.4</rainfall>
+    </reading>
+  </station>
+</catalog>
